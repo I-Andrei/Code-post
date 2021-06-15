@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container overflow-hidden">
+        <div class="row gy-5">
+            <div class="col-6">
+                <div class="p-3 border bg-light"><h2>List of pastes:</h2></div>
+            </div>
+        </div>
+    </div>
+    {% for codepost in object_list %}
+    <ul class="list-group">
+        <li class="list-group-item"><a href="{% url 'PasteApp:pasteid' codepost.id %}">{{ codepost.title }}</a></li>
+    </ul>
+        {% endfor %}
+{% endblock content %}
